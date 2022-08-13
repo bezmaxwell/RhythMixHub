@@ -23,7 +23,7 @@ Suffs to add:
 - Test cases (Link about test here.[First link](https://github.com/bezmaxwell/PlaylistMusic/tree/release/groovy/app/src/androidTest/java/com/example/groovy) [Second link](https://github.com/bezmaxwell/PlaylistMusic/tree/release/groovy/app/src/test/java/com/example/groovy) )
 - Know bugs 
 - Version -1.0
-- Contributors (Just me -[bezmaxwell](https://github.com/bezmaxwell))
+- Contributors (Just me -[@bezmaxwell](https://github.com/bezmaxwell))
 - No License yet.
 - References
 
@@ -34,7 +34,7 @@ Suffs to add:
 - assignment.md
     - an example of an university assignment  
 - opensource.md
-    - a template for an open source project made by [@dbader](https://github.com/dbader)
+    - a template for an open source project made by [@bezmaxwell](https://https://github.com/bezmaxwell)
 
 ## Contributing
 
