@@ -5,8 +5,8 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.groovy.model.Playlist
 import com.example.groovy.databinding.FragmentPlaylistItemBinding
+import com.example.groovy.model.Playlist
 
 class MyPlaylistRecyclerViewAdapter(private val values: List<Playlist>
 ) : RecyclerView.Adapter<MyPlaylistRecyclerViewAdapter.ViewHolder>() {
