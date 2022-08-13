@@ -1,11 +1,11 @@
-package com.example.groovy.ui
+package com.example.groovy.viewModel
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.groovy.Playlist
+import com.example.groovy.model.Playlist
 import com.example.groovy.databinding.FragmentPlaylistItemBinding
 
 class MyPlaylistRecyclerViewAdapter(private val values: List<Playlist>
