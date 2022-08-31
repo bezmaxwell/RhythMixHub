@@ -1,6 +1,7 @@
 package com.example.groovy.playlist
 
 import com.example.groovy.PlaylistApi
+import com.example.groovy.PlaylistRaw
 import com.example.groovy.PlaylistService
 import com.example.groovy.model.Playlist
 import com.example.groovy.utils.BaseUnitTest
@@ -18,7 +19,7 @@ class PlaylistServiceShould : BaseUnitTest() {
 
     private lateinit var service: PlaylistService
     private val api: PlaylistApi = mock()
-    private val playlists: List<Playlist> = mock()
+    private val playlists: List<PlaylistRaw> = mock()
 
     @OptIn(ExperimentalCoroutinesApi::class)
     @Test

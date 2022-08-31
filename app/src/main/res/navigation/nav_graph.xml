@@ -3,26 +3,25 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
+    app:startDestination="@id/fragmentPlaylist">
 
     <fragment
-        android:id="@+id/FirstFragment"
-        android:name="com.example.groovy.PlaylistFragment"
-        android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_playlist">
-
+        android:id="@+id/fragmentPlaylist"
+        android:name="com.example.groovy.view.ui.FragmentPlaylist"
+        android:label="FragmentPlaylist">
         <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            android:id="@+id/action_fragmentPlaylist_to_playlistDetailFragment"
+            app:destination="@id/playlistDetailFragment" />
     </fragment>
     <fragment
-        android:id="@+id/SecondFragment"
-        android:name="com.example.groovy.view.ui.SecondFragment"
-        android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
+        android:id="@+id/playlistDetailFragment"
+        android:name="com.example.groovy.details.PlaylistDetailFragment"
+        android:label="fragment_playlist_detail"
+        tools:layout="@layout/fragment_playlist_detail">
+        <argument
+            android:name="playlistId"
+            app:argType="string"
+            app:nullable="false" />
 
-        <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
     </fragment>
 </navigation>
