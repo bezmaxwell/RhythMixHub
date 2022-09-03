@@ -20,7 +20,7 @@ Readme files are made for bezmaxwell, but also could be used for the final users
 Suffs to add:
 
 - Table of content
-- Test cases (Link about test here.[First link](https://github.com/bezmaxwell/PlaylistMusic/tree/release/groovy/app/src/androidTest/java/com/example/groovy) [Second link](https://github.com/bezmaxwell/PlaylistMusic/tree/release/groovy/app/src/test/java/com/example/groovy) )
+- Test cases (Link about test here.[First link](https://github.com/bezmaxwell/PlaylistMusic/tree/release/groovy/app/src/androidTest/java/com/example/groovy) ||| [Second link](https://github.com/bezmaxwell/PlaylistMusic/tree/release/groovy/app/src/test/java/com/example/groovy) )
 - Know bugs 
 - Version -1.0
 - Contributors (Just me -[@bezmaxwell](https://github.com/bezmaxwell))
@@ -40,7 +40,7 @@ Suffs to add:
 
 Please feel free to contribute by adding new templates to this project:
 
-1. Fork it (<https://github.com/bezmaxwell/PlalistMusic/readme>)
+1. Fork it (<https://github.com/bezmaxwell/PlaylistMusic/blob/release/groovy/README.md>)
 2. Create your feature branch (`git checkout -b  name/feature/groovy`)
 3. Create your fix branch (`git checkout -b  name/fix/groovy`)
 4. Commit your changes (`git commit -am 'Add some groovy'`)
