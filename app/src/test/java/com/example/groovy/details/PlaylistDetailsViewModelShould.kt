@@ -2,11 +2,13 @@ package com.example.groovy.details
 
 import com.example.groovy.PlaylistDetailsService
 import com.example.groovy.utils.BaseUnitTest
+import com.example.groovy.utils.captureValues
 import com.example.groovy.utils.getValueForTest
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.whenever
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.test.runTest
 import org.junit.Assert.assertEquals
 import org.junit.Test
@@ -28,6 +30,7 @@ class PlaylistDetailsViewModelShould : BaseUnitTest() {
     fun getPlaylistDetailsFromService() = runTest {
 
         mockSuccessfulCase()
+        viewModel.getPlaylistDetails(id)
         viewModel.playlistDetails.getValueForTest()
 
         verify(service, times(1)).fetchPlaylistDetails(id)
@@ -37,6 +40,7 @@ class PlaylistDetailsViewModelShould : BaseUnitTest() {
     @Test
     fun emitPlaylistDetailsFromService() = runTest {
         mockSuccessfulCase()
+        viewModel.getPlaylistDetails(id)
         assertEquals(expected, viewModel.playlistDetails.getValueForTest())
     }
 
@@ -45,6 +49,31 @@ class PlaylistDetailsViewModelShould : BaseUnitTest() {
     fun emitErrorWhenServiceFails() = runTest {
         mockErrorCase()
         assertEquals(error, viewModel.playlistDetails.getValueForTest())
+    }
+
+    @Test
+    fun showLoaderWhileLoading() = runBlocking {
+        mockSuccessfulCase()
+            viewModel.loader.captureValues {
+                viewModel.getPlaylistDetails(id)
+                viewModel.playlistDetails.getValueForTest()
+
+                assertEquals(true, values[0])
+            }
+
+        }
+
+    @OptIn(ExperimentalCoroutinesApi::class)
+    @Test
+    fun closeLoaderAfterPlaylistDetailsLoad() = runTest {
+        mockSuccessfulCase()
+
+        viewModel.loader.captureValues {
+            viewModel.getPlaylistDetails(id)
+            viewModel.playlistDetails.getValueForTest()
+
+            assertEquals(false, values.last())
+        }
     }
 
     private suspend fun mockErrorCase() {

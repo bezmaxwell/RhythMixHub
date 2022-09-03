@@ -1,11 +1,12 @@
 package com.example.groovy.details
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ProgressBar
 import android.widget.TextView
+import androidx.compose.material.Snackbar
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.ViewModelProvider
@@ -29,15 +30,26 @@ class PlaylistDetailsFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_playlist_detail, container, false)
         val id = args.playlistId
+        val detailsLoader = view.findViewById<ProgressBar>(R.id.details_loader)
 
         setupViewModel()
         viewModel.getPlaylistDetails(id)
 
-        observeLiveData(view)
+        observePlaylistDetails(view)
+        observeLoader(detailsLoader)
         return view
     }
 
-    private fun observeLiveData(view: View) {
+    private fun observeLoader(detailsLoader:ProgressBar) {
+        viewModel.loader.observe(this as LifecycleOwner) { loading ->
+            when (loading) {
+                true -> detailsLoader.visibility = View.VISIBLE
+                else -> detailsLoader.visibility = View.GONE
+            }
+        }
+    }
+
+    private fun observePlaylistDetails(view: View) {
         viewModel.playlistDetails.observe(this as LifecycleOwner) { playlistDetails ->
             if (playlistDetails.getOrNull() != null) {
                 val (getPlaylistName, getPlaylistDetails) = setupUI(view)
@@ -47,7 +59,10 @@ class PlaylistDetailsFragment : Fragment() {
                     getPlaylistDetails.text = it.details
                 }
             } else {
-                //TODO
+//                com.google.android.material.snackbar.Snackbar
+//                    .make(R.layout.playlists_details_root,
+//                R.string.generic_error,
+//                        com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show()
             }
         }
     }
