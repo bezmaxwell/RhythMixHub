@@ -1,7 +1,6 @@
-# readme
+# PlaylistMusic
 
-This repository is an app PlaylistMusic made using TDD(Test Drive Domain).
-
+Is an app PlaylistMusic made using TDD(Test Drive Domain).
 
 ## Prepare the content
 
