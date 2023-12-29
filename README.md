@@ -1,6 +1,6 @@
-# PlaylistMusic
+# RhythMixHub
 
-Is an app PlaylistMusic made using TDD(Test Drive Domain).
+Is an app RhythMixHub made using TDD(Test Drive Domain).
 
 ## Prepare the content
 
